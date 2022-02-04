@@ -1,10 +1,10 @@
 package de.codebella;
 
 public class EndOfWeek1Task {
-    public static String pwdChecker(String password) {
+    public static String pwdChecker(String password, int pwdLength) {
         if (password == "") {
             return "Error, password cannot be empty.";
-        } else if (password.length() < 5) {
+        } else if (password.length() < pwdLength) {
             return "Error, password too short.";
         } else if (!numberChecker(password)) {
             return "Error, password must contain a number.";
@@ -45,4 +45,6 @@ public class EndOfWeek1Task {
         }
         return result;
     }
+
+
 }
