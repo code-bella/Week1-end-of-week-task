@@ -1,19 +1,27 @@
 package de.codebella;
 
+import java.lang.reflect.Array;
+
 public class EndOfWeek1Task {
-    public static String pwdChecker(String password, int pwdLength) {
-        if (password == "") {
-            return "Error, password cannot be empty.";
-        } else if (password.length() < pwdLength) {
-            return "Error, password too short.";
-        } else if (!numberChecker(password)) {
-            return "Error, password must contain a number.";
-        } else if (!lowercaseLetterChecker(password)) {
-            return "Error, password must contain a lowercase letter.";
-        } else if (!uppercaseLetterChecker(password)) {
-            return "Error, password must contain an uppercase letter.";
+    public static String[] pwdChecker(String[] password, int minPwdLength) {
+        String[] results = new String[Array.getLength(password)];
+        for(int j = 0; j < Array.getLength(password); j++) {
+            if (password[j] == "") {
+                results[j] = "Error, password cannot be empty.";
+            } else if (password[j].length() < minPwdLength) {
+                results[j] = "Error, password too short.";
+            } else if (!numberChecker(password[j])) {
+                results[j] = "Error, password must contain a number.";
+            } else if (!lowercaseLetterChecker(password[j])) {
+                results[j] = "Error, password must contain a lowercase letter.";
+            } else if (!uppercaseLetterChecker(password[j])) {
+                results[j] = "Error, password must contain an uppercase letter.";
+            }
+            if (results[j] == null) {
+                results[j] = "Password accepted.";
+            }
         }
-        return "Password accepted.";
+        return results;
     }
 
     private static Boolean numberChecker(String password) {
