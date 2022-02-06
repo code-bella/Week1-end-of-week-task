@@ -6,7 +6,7 @@ public class EndOfWeek1Task {
     public static String[] pwdChecker(String[] password, int minPwdLength) {
         String[] results = new String[Array.getLength(password)];
         for(int j = 0; j < Array.getLength(password); j++) {
-            if (password[j] == "") {
+            if (password[j].equals("")) {
                 results[j] = "Error, password cannot be empty.";
             } else if (password[j].length() < minPwdLength) {
                 results[j] = "Error, password too short.";
@@ -24,34 +24,31 @@ public class EndOfWeek1Task {
         return results;
     }
 
-    private static Boolean numberChecker(String password) {
-        boolean result = false;
+    private static boolean numberChecker(String password) {
         for (int i=0; i < password.length(); i++) {
             if (Character.isDigit(password.charAt(i))) {
-                result = true;
+                return true;
             }
         }
-        return result;
+        return false;
     }
 
-    private static Boolean lowercaseLetterChecker(String password) {
-        boolean result = false;
+    private static boolean lowercaseLetterChecker(String password) {
         for (int i=0; i < password.length(); i++) {
             if (Character.isLowerCase(password.charAt(i))) {
-                result = true;
+                return true;
             }
         }
-        return result;
+        return false;
     }
 
-    private static Boolean uppercaseLetterChecker(String password) {
-        boolean result = false;
+    private static boolean uppercaseLetterChecker(String password) {
         for (int i=0; i < password.length(); i++) {
             if (Character.isUpperCase(password.charAt(i))) {
-                result = true;
+                return true;
             }
         }
-        return result;
+        return false;
     }
 
 
