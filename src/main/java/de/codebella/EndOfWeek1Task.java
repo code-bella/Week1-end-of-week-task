@@ -6,7 +6,7 @@ public class EndOfWeek1Task {
     public static String[] pwdChecker(String[] password, int minPwdLength) {
         String[] results = new String[Array.getLength(password)];
         for(int j = 0; j < Array.getLength(password); j++) {
-            if (password[j].equals("")) {
+            if (password[j].isEmpty()) {
                 results[j] = "Error, password cannot be empty.";
             } else if (password[j].length() < minPwdLength) {
                 results[j] = "Error, password too short.";

@@ -29,4 +29,8 @@ class EndOfWeek1TaskTest {
     void noUppercaseLetterShouldGiveAnError() {
         assertArrayEquals(new String[] {"Error, password must contain an uppercase letter.", "Error, password must contain an uppercase letter."}, EndOfWeek1Task.pwdChecker(new String[] {"tester67896798$", "tester67896798+"}, 5));
     }
+    @Test
+    void noUppercaseAndNoLowercaseLetterShouldGiveAnError() {
+        assertArrayEquals(new String[] {"Error, password must contain a lowercase letter.", "Error, password must contain an uppercase letter."}, EndOfWeek1Task.pwdChecker(new String[] {"TESTER67896798$", "tester67896798+"}, 5));
+    }
 }
