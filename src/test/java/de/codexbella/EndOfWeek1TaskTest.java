@@ -1,4 +1,4 @@
-package de.codebella;
+package de.codexbella;
 
 import org.junit.jupiter.api.Test;
 
